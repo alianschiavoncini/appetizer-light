@@ -27,7 +27,7 @@
                     <div class="main-title-inner">
                         <?php if ( is_home() && is_front_page() ) { ?>
                         <?php
-							$page_title = __( 'Posts', 'appetizer-light' );
+							$page_title = esc_html__( 'Posts', 'appetizer-light' );
 							$page_for_posts = get_option('page_for_posts', true);
 							if ( $page_for_posts != 0 ) { $page_title = get_the_title( $page_for_posts ); }
 						?>
@@ -39,12 +39,12 @@
                         ?>
                         <?php }elseif ( is_search() ) { ?>
                         <?php 	if ( have_posts() ) : ?>
-                            <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'appetizer-light' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                            <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'appetizer-light' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                         <?php 	else : ?>
-                            <h1 class="page-title"><?php _e( 'Nothing Found', 'appetizer-light' ); ?></h1>
+                            <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'appetizer-light' ); ?></h1>
                         <?php 	endif; ?>
                         <?php }elseif ( is_404() ) { ?>
-                        <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'appetizer-light' ); ?></h1>
+                        <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'appetizer-light' ); ?></h1>
                         <?php }else{ ?>
                         <h1 class="page-title"><?php single_post_title(); ?></h1>
                         <?php } ?>

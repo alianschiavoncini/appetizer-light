@@ -25,7 +25,7 @@ get_header();
                 <div class="col-md-12">
                     <article id="post-404notfound">
                         <div class="article-inner">
-                            <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'appetizer-light' ); ?></p>
+                            <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'appetizer-light' ); ?></p>
                             <?php get_search_form(); ?>
                         </div>
                     </article>

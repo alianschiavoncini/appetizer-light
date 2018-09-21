@@ -39,7 +39,7 @@ function appetizer_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Main Menu', 'appetizer-light' )
+		'primary' => esc_html__( 'Main Menu', 'appetizer-light' )
 	) );
 
 	/**
@@ -125,9 +125,9 @@ function appetizer_widgets_init() {
 	
     // sidebar standard
 	register_sidebar( array(
-        'name' 			=> __( 'Main Sidebar', 'appetizer-light' ),
+        'name' 			=> esc_html__( 'Main Sidebar', 'appetizer-light' ),
         'id' 			=> 'sidebar',
-        'description' 	=> __( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
+        'description' 	=> esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="titlewidget">',
@@ -136,9 +136,9 @@ function appetizer_widgets_init() {
 
 	// footer col-1
 	register_sidebar( array(
-        'name' 			=> __( 'Footer: Column 1', 'appetizer-light' ),
+        'name' 			=> esc_html__( 'Footer: Column 1', 'appetizer-light' ),
         'id' 			=> 'footer-column-1',
-        'description' 	=> __( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
+        'description' 	=> esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="titlewidget">',
@@ -147,9 +147,9 @@ function appetizer_widgets_init() {
 
 	// footer col-2
 	register_sidebar( array(
-        'name' 			=> __( 'Footer: Column 2', 'appetizer-light' ),
+        'name' 			=> esc_html__( 'Footer: Column 2', 'appetizer-light' ),
         'id' 			=> 'footer-column-2',
-        'description' 	=> __( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
+        'description' 	=> esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="titlewidget">',
@@ -158,9 +158,9 @@ function appetizer_widgets_init() {
 
 	// footer col-3
 	register_sidebar( array(
-        'name' 			=> __( 'Footer: Column 3', 'appetizer-light' ),
+        'name' 			=> esc_html__( 'Footer: Column 3', 'appetizer-light' ),
         'id' 			=> 'footer-column-3',
-        'description' 	=> __( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
+        'description' 	=> esc_html__( 'Widgets in this area will be shown on all posts and pages.', 'appetizer-light' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="titlewidget">',

@@ -19,7 +19,7 @@
 <?php
 if ( post_password_required() ) :
 ?>
-	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'appetizer-light' ); ?></p>
+	<p class="nopassword"><?php esc_html_e( 'This post is password protected. Enter the password to view any comments.', 'appetizer-light' ); ?></p>
 </div>
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -32,7 +32,7 @@ endif;
 
 <?php if ( have_comments() ) : ?>
 
-	<p class="title-section"><?php comments_number( __( 'No Comments', 'appetizer-light' ), __( 'One Comment', 'appetizer-light' ), __( '% Comments', 'appetizer-light' ) );?></p>
+	<p class="title-section"><?php comments_number( esc_html__( 'No Comments', 'appetizer-light' ), esc_html__( 'One Comment', 'appetizer-light' ), esc_html__( '% Comments', 'appetizer-light' ) );?></p>
  
 	<!-- commentlist -->
     <ol class="commentlist">
@@ -49,8 +49,8 @@ endif;
         <?php
             paginate_comments_links( 
                 array(
-                    'prev_text' => __( '<span class="meta-nav">&larr;</span> Older Comments', 'appetizer-light' ), 
-                    'next_text' => __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'appetizer-light' )
+                    'prev_text' => esc_html__( '<span class="meta-nav">&larr;</span> Older Comments', 'appetizer-light' ), 
+                    'next_text' => esc_html__( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'appetizer-light' )
                 )
             );
         ?>
@@ -64,7 +64,7 @@ endif;
 		 */
 		if ( ! comments_open() ) : 
 ?>
-		<p class="title-section"><?php _e( 'Comments are closed.', 'appetizer-light' ); ?></p>
+		<p class="title-section"><?php esc_html_e( 'Comments are closed.', 'appetizer-light' ); ?></p>
 <?php 	endif; ?>
 
 <?php endif; ?>
@@ -78,26 +78,26 @@ $custom_comment_form = array(
 		'fields' => apply_filters( 'comment_form_default_fields', 
 						array(
 							'author' => '<div class="form-group">
-										<label for="author" class="comment-label">' . __( 'Your Name' , 'appetizer-light' ) . ( $req ? ' <span class="required_lab">*</span>' : '' ) . '</label> 
+										<label for="author" class="comment-label">' . esc_html__( 'Your Name' , 'appetizer-light' ) . ( $req ? ' <span class="required_lab">*</span>' : '' ) . '</label> 
 										<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' class="form-control required" required="required">
 										</div>',
 							'email' => '<div class="form-group">
-										<label for="email" class="comment-label">' . __( 'Your Email' , 'appetizer-light' ) . ( $req ? ' <span class="required_lab">*</span>' : '' ) . '</label> 
+										<label for="email" class="comment-label">' . esc_html__( 'Your Email' , 'appetizer-light' ) . ( $req ? ' <span class="required_lab">*</span>' : '' ) . '</label> 
 										<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' class="form-control required" required="required">
 										</div>',
 							'url' => '<div class="form-group">
-										<label for="url" class="comment-label">' . __( 'Your Website' , 'appetizer-light' ) . '</label> 
+										<label for="url" class="comment-label">' . esc_html__( 'Your Website' , 'appetizer-light' ) . '</label> 
 										<input id="url" name="url" type="text" value="' . esc_attr(  $commenter['comment_author_url'] ) . '"' . $aria_req . ' class="form-control">
 										</div>')
 							),
 							'comment_field' => '<div class="form-group">
-										<label for="comment" class="comment-label">' . __( 'Comment' , 'appetizer-light' ) . '</label> 
+										<label for="comment" class="comment-label">' . esc_html__( 'Comment' , 'appetizer-light' ) . '</label> 
 										<textarea id="comment" name="comment" rows="6" aria-required="true" class="form-control required" required="required"></textarea>
 										</div>',
-							'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s">Log out?</a>', 'appetizer-light' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',
-							'title_reply' => '<p class="title-section">' . __( 'Leave a Reply' , 'appetizer-light' ) . '</p>',
-							'cancel_reply_link' => __( 'Cancel' , 'appetizer-light' ),
-							'label_submit' => __( 'Submit Comment' , 'appetizer-light' ),
+							'logged_in_as' => '<p class="logged-in-as">' . sprintf( esc_html__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s">Log out?</a>', 'appetizer-light' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</p>',
+							'title_reply' => '<p class="title-section">' . esc_html__( 'Leave a Reply' , 'appetizer-light' ) . '</p>',
+							'cancel_reply_link' => esc_html__( 'Cancel' , 'appetizer-light' ),
+							'label_submit' => esc_html__( 'Submit Comment' , 'appetizer-light' ),
 							'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn btn-primary btn-comment" value="%4$s" />',
 							'comment_form_after' => '<hr>',
 							);

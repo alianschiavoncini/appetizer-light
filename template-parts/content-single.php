@@ -16,7 +16,7 @@
 	<?php
 	the_content();
 
-	the_tags( '<p class="post-meta post-tags"><strong>' . __( 'Tags', 'appetizer-light' ).':</strong> ', ', ', '</p>' );
+	the_tags( '<p class="post-meta post-tags"><strong>' . esc_html__( 'Tags', 'appetizer-light' ).':</strong> ', ', ', '</p>' );
     ?>
 	</div>
     <?php get_template_part( 'template-parts/navigation', 'single' ); ?>

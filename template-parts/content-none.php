@@ -13,7 +13,7 @@
 ?>
 <article id="post-no-content" <?php post_class(); ?>>
     <div class="article-inner">
-        <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'appetizer-light' ); ?></p>
+        <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'appetizer-light' ); ?></p>
         <?php get_search_form(); ?>
 	</div>
 </article>
